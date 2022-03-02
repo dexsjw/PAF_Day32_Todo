@@ -1,0 +1,31 @@
+<form [formGroup]="taskForm" (ngSubmit)="addTask()">
+    <section>
+        <div>
+            <label for="username">Username: </label>
+        </div>
+        <div>
+            <input type="text" id="username"  formControlName="username">
+        </div>
+        <div>
+            <label for="taskName">Task Name: </label>
+        </div>
+        <div>
+            <input type="text" id="taskName"  formControlName="taskName">
+        </div>
+        <div>
+            <input type="radio" value="low" formControlName="priority">Low
+            <input type="radio" value="med" formControlName="priority">Medium
+            <input type="radio" value="high" formControlName="priority">High
+        </div>
+        <div>
+            <label for="dueDate"></label>
+        </div>
+        <div>
+            <input type="date" id="dueDate" formControlName="dueDate">
+        </div>
+    </section>
+    <section>
+        <button type="button" (click)="back()">Back</button>
+        <button type="submit" [disabled]="taskForm.invalid">Add Task!</button>
+    </section>
+</form>

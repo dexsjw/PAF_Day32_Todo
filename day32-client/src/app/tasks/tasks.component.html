@@ -1,0 +1,11 @@
+<section>
+    <h2>Tasks</h2>
+</section>
+<section>
+    <div *ngFor="let task of tasks">
+        {{ task.username }} : {{ task.taskName }}
+    </div>
+</section>
+<section>
+    <button type="button" [routerLink]="['/add']">Add New Task</button>
+</section>
